@@ -1,55 +1,127 @@
 <!doctype html>
 <html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title>eventapture</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body>
-    <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-      <li>HTML5 Boilerplate</li>
-      <li>Sass</li>
-
-      </ul>
+<head>
+  <meta charset="utf-8">
+  <title>Eventapture - Capture all events.</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body>
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Eventapture</a>
     </div>
 
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <form class="navbar-right navbar-form" action="">
+        <button class="btn btn-primary">
+          Login
+        </button>
+      </form>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+</nav>
+<section id="skeleton">
+  <div class="container-fluid no-left-padding">
+    <div id="sidebar" class="col-lg-3 col-md-3 col-xs-12 no-left-padding">
+      <div class="well">
+        <aside>
+          <article>
+            <ul class="nav nav-pills nav-stacked">
+              <li>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for..."/>
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </article>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+          <article>
+            <ul class="nav nav-pills nav-stacked">
+              <li class="active">
+                <a href="#"><i class="fa fa-home minor-right-spacing-10"></i>Home</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-file-o minor-right-spacing-10"></i>Pages</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-star minor-right-spacing-10"></i>Favorites</a>
+              </li>
+            </ul>
+          </article>
+          <article>
+            <h3 class="minor-bottom-padding-10">
+              Trending
+              <span class="pull-right">
+                <i class="fa fa-line-chart"></i>
+              </span>
+            </h3>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
+            <div class="panel panel-default minor-bottom-spacing-10">
+              <div class="panel-body">
+                Vivamus faucibus odio at rutrum consectetur. Integer at interdum arcu.
+              </div>
+            </div>
+            <div class="panel panel-default minor-bottom-spacing-10">
+              <div class="panel-body">
+                Sed leo felis, fringilla id sodales ut, blandit quis arcu. Aliquam ultrices molestie gravida.
+              </div>
+            </div>
+            <div class="panel panel-default minor-bottom-spacing-10">
+              <div class="panel-body">
+                Suspendisse pretium placerat ornare. Sed varius sodales iaculis. Phasellus posuere mollis eros, at
+                fringilla purus viverra nec.
+              </div>
+            </div>
+          </article>
+        </aside>
+      </div>
+    </div>
+    <div class="col-lg-offset-3 col-lg-9 col-xs-12">
+      
+    </div>
+  </div>
+</section>
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+
+<!-- build:js({app,.tmp}) scripts/main.js -->
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
 </body>
 </html>
