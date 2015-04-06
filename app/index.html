@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" ng-app="evtpr">
 <head>
   <meta charset="utf-8">
   <title>Eventapture - Capture all events.</title>
@@ -9,7 +9,8 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="bower_components/nvd3/src/nv.d3.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -67,61 +68,96 @@
           <article>
             <ul class="nav nav-pills nav-stacked">
               <li class="active">
-                <a href="#"><i class="fa fa-home minor-right-spacing-10"></i>Home</a>
+                <a ui-sref="/">
+                  <i class="fa fa-home minor-right-spacing-10"></i>
+                  Home
+                </a>
               </li>
               <li>
-                <a href="#"><i class="fa fa-file-o minor-right-spacing-10"></i>Pages</a>
+                <a ui-sref="pages">
+                  <i class="fa fa-file-o minor-right-spacing-10"></i>
+                  Pages
+                </a>
               </li>
               <li>
-                <a href="#"><i class="fa fa-star minor-right-spacing-10"></i>Favorites</a>
+                <a ui-sref="favorites">
+                  <i class="fa fa-star minor-right-spacing-10"></i>
+                  Favorites
+                </a>
               </li>
             </ul>
           </article>
-          <article>
-            <h3 class="minor-bottom-padding-10">
-              Trending
-              <span class="pull-right">
-                <i class="fa fa-line-chart"></i>
-              </span>
-            </h3>
 
-            <div class="panel panel-default minor-bottom-spacing-10">
-              <div class="panel-body">
-                Vivamus faucibus odio at rutrum consectetur. Integer at interdum arcu.
-              </div>
-            </div>
-            <div class="panel panel-default minor-bottom-spacing-10">
-              <div class="panel-body">
-                Sed leo felis, fringilla id sodales ut, blandit quis arcu. Aliquam ultrices molestie gravida.
-              </div>
-            </div>
-            <div class="panel panel-default minor-bottom-spacing-10">
-              <div class="panel-body">
-                Suspendisse pretium placerat ornare. Sed varius sodales iaculis. Phasellus posuere mollis eros, at
-                fringilla purus viverra nec.
-              </div>
-            </div>
-          </article>
         </aside>
       </div>
     </div>
     <div class="col-lg-offset-3 col-lg-9 col-xs-12">
-      
+      <br class="clearfix"/>
+
+      <section ui-view>
+      </section>
+      <br class="clearfix"/>
+      <br class="clearfix"/>
+      <br class="clearfix"/>
+
     </div>
   </div>
 </section>
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"> <i class="fa fa-line-chart minor-right-spacing-15"></i> Trending right now on planet:</a>
+    </div>
 
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <div class="col-md-offset-3">
+        <div class="navbar-left navbar-form well well-sm no-bottom-margin no-bottom-padding">
+          <div class="minor-bottom-spacing-10">
+            Suspendisse pretium placerat ornare. Sed varius sodales iaculis. Phasellus posuere mollis eros, at
+            fringilla purus viverra nec.
+
+            <a href="#" class="btn btn-success btn-xs minor-left-spacing-10">More <i
+              class="fa fa-arrow-circle-right"></i></a>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+</nav>
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/d3/d3.js"></script>
+<script src="bower_components/nvd3/nv.d3.js"></script>
+<script src="bower_components/angular-nvd3/dist/angular-nvd3.min.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 
-<!-- build:js({app,.tmp}) scripts/main.js -->
-<script src="scripts/main.js"></script>
+<!-- build:js({app,.tmp}) scripts/app.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/constants.js"></script>
+
+<script src="scripts/controllers/index.js"></script>
+<script src="scripts/controllers/pages.js"></script>
+
+<script src="scripts/services/trending.js"></script>
 <!-- endbuild -->
 </body>
 </html>
