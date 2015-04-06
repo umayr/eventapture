@@ -17,7 +17,7 @@
     vm.options = {
       chart: {
         type: 'pieChart',
-        height: 400,
+        height: 320,
         donut: true,
         x: function(d){return d.key;},
         y: function(d){return d.y;},
@@ -30,8 +30,8 @@
         transitionDuration: 500,
         legend: {
           margin: {
-            top: 5,
-            right: 60,
+            top: 18,
+            right: 10,
             bottom: 5,
             left: 0
           }
