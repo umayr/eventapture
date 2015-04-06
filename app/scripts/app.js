@@ -3,7 +3,7 @@
 
   var app = angular.module('evtpr',['ui.router','nvd3']);
 
-  app.config(function ($stateProvider, $urlRouterProvider) {
+  app.config(['$stateProvider', '$urlRouterProvider',function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
 
@@ -22,5 +22,5 @@
         templateUrl: 'partials/index.html',
         controller : 'Index as vm'
       });
-  });
+  }]);
 })();
