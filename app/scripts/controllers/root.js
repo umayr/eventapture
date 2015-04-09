@@ -5,14 +5,13 @@
   'use strict';
 
   angular.module('evtpr')
-    .controller('root', Root);
+    .controller('Root', Root);
 
   Root.$inject = ['$location', 'Authentication'];
 
   function Root($location, Authentication) {
     /*jshint validthis: true */
     var vm = this;
-    vm.hello = 'hello, Root';
     vm.categories = [
       'Sports',
       'Politics',

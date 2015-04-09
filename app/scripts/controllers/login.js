@@ -12,8 +12,6 @@
   function Login($window, Authentication) {
     /*jshint validthis: true */
     var vm = this;
-    vm.hello = 'hello, Login';
-
     vm.error = {
       has: false,
       message: ''

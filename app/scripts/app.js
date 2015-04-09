@@ -8,20 +8,41 @@
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-      .state('pages', {
-        url: '/pages',
-        templateUrl: 'partials/pages.html',
-        controller: 'Pages'
+      .state('root', {
+        templateUrl: 'partials/skeleton.html',
+        controller: 'Root as vm',
+        abstract: true
       })
-      .state('favorites', {
-        url: '/favorites',
-        templateUrl: 'partials/favorites.html'
-      })
-      .state('index', {
+      .state('root.index', {
         url: '/',
-        templateUrl: 'partials/index.html',
-        controller: 'Index as vm'
+        views: {
+          'skeleton': {
+            templateUrl: 'partials/index.html',
+            controller: 'Index as vm'
+          }
+        }
+      })
+      .state('root.pages', {
+        url: '/pages',
+        views: {
+          'skeleton': {
+            templateUrl: 'partials/pages.html',
+            controller: 'Pages as vm'
+          }
+        }
+      })
+      .state('root.favorites', {
+        url: '/favorites',
+        views: {
+          'skeleton': {
+            templateUrl: 'partials/favorites.html'
+          }
+        }
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'partials/login.html',
+        controller: 'Login as vm'
       });
-
   }]);
 })();
