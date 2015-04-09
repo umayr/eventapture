@@ -1,26 +1,26 @@
 (function () {
   'use strict';
 
-  var app = angular.module('evtpr',['ui.router','nvd3']);
+  var app = angular.module('evtpr', ['ui.router', 'nvd3']);
 
-  app.config(['$stateProvider', '$urlRouterProvider',function ($stateProvider, $urlRouterProvider) {
+  app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
-    //$urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider
-      .state('pages',{
+      .state('pages', {
         url: '/pages',
         templateUrl: 'partials/pages.html',
-        controller : 'Pages'
+        controller: 'Pages'
       })
-      .state('favorites',{
+      .state('favorites', {
         url: '/favorites',
         templateUrl: 'partials/favorites.html'
       })
-      .state('index',{
+      .state('index', {
         url: '/',
         templateUrl: 'partials/index.html',
-        controller : 'Index as vm'
+        controller: 'Index as vm'
       });
 
   }]);

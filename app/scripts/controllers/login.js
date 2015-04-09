@@ -7,9 +7,9 @@
   angular.module('evtpr')
     .controller('Login', Login);
 
-  Login.$inject = ['$window','$rootScope', 'Authentication'];
+  Login.$inject = ['$window', 'Authentication'];
 
-  function Login($window, $rootScope,Authentication) {
+  function Login($window, Authentication) {
     /*jshint validthis: true */
     var vm = this;
     vm.hello = 'hello, Login';

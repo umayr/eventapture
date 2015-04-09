@@ -7,9 +7,9 @@
   angular.module('evtpr')
     .controller('root', Root);
 
-  Root.$inject = ['$location', '$rootScope'];
+  Root.$inject = ['$location', 'Authentication'];
 
-  function Root($location, $rootScope) {
+  function Root($location, Authentication) {
     /*jshint validthis: true */
     var vm = this;
     vm.hello = 'hello, Root';
@@ -28,9 +28,9 @@
       'Talent'
     ];
 
-    vm.isAuthenticated = $rootScope.isAuthenticated;
+    vm.isAuthenticated = Authentication.isAuthenticated();
     if (!!vm.isAuthenticated) {
-      vm.userInfo = $rootScope.identity;
+      vm.userInfo = Authentication.getIdentity();
     }
   }
 })();
