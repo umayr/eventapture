@@ -112,14 +112,14 @@ $collection: ('left', 'right', 'top', 'bottom');
     margin-#{$direction}: 0;
   }
 
-  @for $i from 10 through 20 {
+  @for $i from 1 through 20 {
 
     .minor-#{$direction}-spacing-#{$i} {
       margin-#{$direction}: $i + px;
     }
 
     .minor-#{$direction}-padding-#{$i} {
-      padding-#{$direction}: $i + px;
+      padding-#{$direction}: $i + px !important;
     }
   }
 }

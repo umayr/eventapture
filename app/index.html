@@ -9,15 +9,15 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-  <link rel="stylesheet" href="bower_components/nvd3/src/nv.d3.css" />
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+  <link rel="stylesheet" href="bower_components/nvd3/src/nv.d3.css"/>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
-<body>
+<body ng-controller="root as vm">
 <!--[if lt IE 10]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
@@ -39,9 +39,17 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="navbar-right navbar-form">
-        <a class="btn btn-primary" href="login.html">
-          Login
-        </a>
+        <div ng-if="vm.isAuthenticated">
+          <a class="btn btn-primary">
+            {{ vm.userInfo.fullname }}
+          </a>
+        </div>
+        <div ng-if="!vm.isAuthenticated">
+          <a class="btn btn-primary" href="login.html">
+            Login
+          </a>
+        </div>
+
       </div>
     </div>
     <!-- /.navbar-collapse -->
@@ -68,26 +76,33 @@
           <article>
             <ul class="nav nav-pills nav-stacked">
               <li class="active">
-                <a ui-sref="/">
+                <a ui-sref="/" class="minor-top-padding-5 minor-bottom-padding-5">
                   <i class="fa fa-home minor-right-spacing-10"></i>
                   Home
                 </a>
               </li>
               <li>
-                <a ui-sref="pages">
+                <a ui-sref="pages" class="minor-top-padding-5 minor-bottom-padding-5">
                   <i class="fa fa-file-o minor-right-spacing-10"></i>
                   Pages
                 </a>
               </li>
               <li>
-                <a ui-sref="favorites">
+                <a ui-sref="favorites" class="minor-top-padding-5 minor-bottom-padding-5">
                   <i class="fa fa-star minor-right-spacing-10"></i>
                   Favorites
                 </a>
               </li>
             </ul>
           </article>
-
+          <article class="minor-top-spacing-10">
+            <div class="list-group">
+              <a ng-repeat="category in vm.categories" ui-sref="/"
+                 class="list-group-item minor-top-padding-3 minor-bottom-padding-3">
+                {{ category }}
+              </a>
+            </div>
+          </article>
         </aside>
       </div>
     </div>
@@ -114,7 +129,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"> <i class="fa fa-line-chart minor-right-spacing-15"></i> Trending right now on planet:</a>
+      <a class="navbar-brand" href="#"> <i class="fa fa-line-chart minor-right-spacing-15"></i> Trending right now on
+        planet:</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -156,8 +172,10 @@
 
 <script src="scripts/controllers/index.js"></script>
 <script src="scripts/controllers/pages.js"></script>
+<script src="scripts/controllers/root.js"></script>
 
 <script src="scripts/services/trending.js"></script>
+<script src="scripts/services/authentication.js"></script>
 
 <script src="scripts/directives/story.js"></script>
 <!-- endbuild -->

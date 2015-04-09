@@ -5,7 +5,7 @@
 
   app.config(['$stateProvider', '$urlRouterProvider',function ($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/');
+    //$urlRouterProvider.otherwise('/');
 
     $stateProvider
       .state('pages',{
@@ -22,5 +22,6 @@
         templateUrl: 'partials/index.html',
         controller : 'Index as vm'
       });
+
   }]);
 })();
