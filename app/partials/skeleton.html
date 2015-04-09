@@ -15,15 +15,23 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="navbar-right navbar-form">
-        <div ng-if="vm.isAuthenticated">
-          <a class="btn btn-primary">
-            {{ vm.userInfo.fullname }}
+        <div ng-if="vm.isAuthenticated" dropdown>
+          <a class="btn btn-primary" dropdown-toggle>
+            {{ vm.userInfo.fullname }} <i class="fa fa-angle-down minor-left-padding-10"></i>
           </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a ui-sref="#"><i class="fa fa-star minor-right-padding-10"></i>Favorites</a></li>
+            <li><a ui-sref="#"><i class="fa fa-file-o minor-right-padding-10"></i>Pages</a></li>
+            <li><a ui-sref="#"><i class="fa fa-cog minor-right-padding-10"></i>Settings</a></li>
+            <li class="divider"></li>
+            <li><a ui-sref="#"><i class="fa fa-sign-out minor-right-padding-10"></i>Log out</a></li>
+          </ul>
         </div>
         <div ng-if="!vm.isAuthenticated">
           <a class="btn btn-primary" ui-sref="login">
             Login
           </a>
+
         </div>
 
       </div>
