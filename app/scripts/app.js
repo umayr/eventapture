@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var app = angular.module('evtpr', ['ui.router', 'nvd3']);
+  var app = angular.module('evtpr', ['ui.router', 'nvd3', 'ui.bootstrap']);
 
   app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 

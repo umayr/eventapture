@@ -9,7 +9,7 @@
 
   Index.$inject = ['$location'];
 
-  function Index($location){
+  function Index($location) {
     /*jshint validthis: true */
     var vm = this;
     vm.hello = 'hello, Index';
@@ -19,13 +19,21 @@
         type: 'pieChart',
         height: 320,
         donut: true,
-        x: function(d){return d.key;},
-        y: function(d){return d.y;},
+        x: function (d) {
+          return d.key;
+        },
+        y: function (d) {
+          return d.y;
+        },
         showLabels: false,
 
         pie: {
-          startAngle: function(d) { return d.startAngle  - Math.PI  },
-          endAngle: function(d) { return d.endAngle- Math.PI }
+          startAngle: function (d) {
+            return d.startAngle - Math.PI
+          },
+          endAngle: function (d) {
+            return d.endAngle - Math.PI
+          }
         },
         transitionDuration: 500,
         legend: {
@@ -60,5 +68,8 @@
         }
       ];
     };
+    vm.data = [
+      vm.makeData(), vm.makeData(), vm.makeData()
+    ];
   }
 })();
