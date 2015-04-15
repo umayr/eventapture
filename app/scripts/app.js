@@ -39,6 +39,15 @@
           }
         }
       })
+      .state('root.settings', {
+        url: '/settings',
+        views: {
+          'skeleton': {
+            templateUrl: 'partials/settings.html',
+            controller: 'Settings as vm'
+          }
+        }
+      })
       .state('login', {
         url: '/login',
         templateUrl: 'partials/login.html',
