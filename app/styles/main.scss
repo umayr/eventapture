@@ -29,7 +29,9 @@ body {
       min-height: 100%;
       position: absolute;
     }
-
+    .categories-icon{
+      width: 35px; display: inline-block; text-align: center;
+    }
     aside {
       article {
         &:first-child {
@@ -41,6 +43,11 @@ body {
 }
 
 .login-wrapper {
+  .close-btn-wrap{
+    position: relative;
+    top:25px;
+    right: 25px;
+  }
   position: absolute;
   top:0;
   left:0;
@@ -56,7 +63,7 @@ body {
 
     &.login-box {
       width: 300px;
-      margin: 100px auto;
+      margin: 150px auto;
     }
     &.login-box legend {
       font-size: 26px;

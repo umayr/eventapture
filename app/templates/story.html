@@ -2,13 +2,18 @@
   <div class="panel-heading">
     <h3 class="panel-title text-center">
       <span ng-bind="heading"></span>
+      <div class="pull-right">
+        <span class="label label-default">9.3</span>
+      </div>
     </h3>
   </div>
   <div class="panel-body">
     <div class="label-wrap">
       <span ng-if="getType('live')" class="label label-success">Live</span>
       <span ng-if="getType('closed')" class="label label-danger">Closed</span>
+
     </div>
+
     <div class="graph-wrap">
       <div>
         <nvd3 options='options' data='data'></nvd3>
@@ -18,19 +23,15 @@
   <div class="panel-footer">
     <div>
       <a tooltip="Shout it to Social Media"
-         class="btn no-left-padding no-bottom-padding no-top-padding text-primary">
-        <i class="fa fa-bullhorn"></i>
+         class="btn no-bottom-padding no-top-padding text-primary">
+        <i class="fa fa-share-alt"></i>
       </a>
       <a tooltip="Like"
          class="btn no-bottom-padding no-top-padding text-primary">
         <i class="fa fa-heart-o"></i>
       </a>
-      <a tooltip="9.3"
-         class="btn no-bottom-padding no-top-padding text-primary">
-        <i class="fa fa-star"></i>
-      </a>
       <a class="btn minor-right-padding-20 minor-left-padding-20 no-bottom-padding no-top-padding text-primary">
-        View Story
+        Show Full Story
       </a>
       <a tooltip="Report Abusive"
          class="btn no-right-padding no-bottom-padding no-top-padding text-danger">
