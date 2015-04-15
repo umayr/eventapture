@@ -20,9 +20,9 @@
             {{ vm.userInfo.fullname }} <i class="fa fa-angle-down minor-left-padding-10"></i>
           </a>
           <ul class="dropdown-menu" role="menu">
-            <li><a ui-sref="#"><i class="fa fa-star minor-right-padding-10"></i>Favorites</a></li>
-            <li><a ui-sref="#"><i class="fa fa-file-o minor-right-padding-10"></i>Pages</a></li>
-            <li><a ui-sref="#"><i class="fa fa-cog minor-right-padding-10"></i>Settings</a></li>
+            <li><a ui-sref="root.favorites"><i class="fa fa-star minor-right-padding-10"></i>Favorites</a></li>
+            <li><a ui-sref="root.pages"><i class="fa fa-file-o minor-right-padding-10"></i>Pages</a></li>
+            <li><a ui-sref="root.settings"><i class="fa fa-cog minor-right-padding-10"></i>Settings</a></li>
             <li class="divider"></li>
             <li><a ui-sref="#"><i class="fa fa-sign-out minor-right-padding-10"></i>Log out</a></li>
           </ul>
@@ -58,20 +58,20 @@
           </article>
           <article>
             <ul class="nav nav-pills nav-stacked">
-              <li class="active">
-                <a ui-sref="/" class="minor-top-padding-5 minor-bottom-padding-5">
+              <li ng-class="{'active' : vm.isStateActive('root.index')}">
+                <a ui-sref="root.index" class="minor-top-padding-5 minor-bottom-padding-5">
                   <i class="fa fa-home minor-right-spacing-10"></i>
                   Home
                 </a>
               </li>
-              <li>
-                <a ui-sref="pages" class="minor-top-padding-5 minor-bottom-padding-5">
+              <li ng-class="{'active' : vm.isStateActive('root.pages')}">
+                <a ui-sref="root.pages" class="minor-top-padding-5 minor-bottom-padding-5">
                   <i class="fa fa-file-o minor-right-spacing-10"></i>
                   Pages
                 </a>
               </li>
-              <li>
-                <a ui-sref="favorites" class="minor-top-padding-5 minor-bottom-padding-5">
+              <li ng-class="{'active' : vm.isStateActive('root.favorites')}">
+                <a ui-sref="root.favorites" class="minor-top-padding-5 minor-bottom-padding-5">
                   <i class="fa fa-star minor-right-spacing-10"></i>
                   Favorites
                 </a>
@@ -80,9 +80,13 @@
           </article>
           <article class="minor-top-spacing-10">
             <div class="list-group">
-              <a ng-repeat="category in vm.categories" ui-sref="/"
+              <a ng-repeat="category in vm.categories" ui-sref="root.index"
                  class="list-group-item minor-top-padding-3 minor-bottom-padding-3">
-                {{ category }}
+                <span class="categories-icon">
+                  <i class="fa" ng-class="category.icon"></i>
+                </span>
+
+                {{ category.name }}
               </a>
             </div>
           </article>
