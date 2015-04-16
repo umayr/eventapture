@@ -108,34 +108,16 @@
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-              data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+    <div class="col-md-3 no-left-padding no-right-padding">
       <a class="navbar-brand" href="#"> <i class="fa fa-line-chart minor-right-spacing-15"></i> Trending right now on
         planet:</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-      <div class="col-md-offset-3">
-        <div class="navbar-left navbar-form well well-sm no-bottom-margin no-bottom-padding">
-          <div class="minor-bottom-spacing-10">
-            Suspendisse pretium placerat ornare. Sed varius sodales iaculis. Phasellus posuere mollis eros, at
-            fringilla purus viverra nec.
-
-            <a href="#" class="btn btn-success btn-xs minor-left-spacing-10">More <i
-              class="fa fa-arrow-circle-right"></i></a>
-
-          </div>
-        </div>
+    <div class="col-md-9">
+      <div class="navbar-form well well-sm no-bottom-margin no-top-padding">
+        <ticker items="vm.trends"></ticker>
       </div>
-
-
     </div>
     <!-- /.navbar-collapse -->
   </div>

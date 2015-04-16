@@ -28,6 +28,12 @@
       {name :'Talent', icon : 'fa-binoculars'}
     ];
 
+    vm.trends = [
+      { heading : 'Fusce eget diam at ex varius dictum.', up:'Ex Varius 40%', down: 'Non Vehicula 10%'},
+      { heading : 'Sed nec eros quis nisi tempor tincidunt.', up:'Quis Nisi 30%', down: 'Viverra Turpis 40%'},
+      { heading : 'In varius magna non vehicula auctor.', up:'Viverra Turpis 40%', down: 'Quis Nisi 30%'},
+      { heading : 'In viverra turpis sit amet arcu auctor eleifend.', up:'Non Vehicula 10%', down: 'Ex Varius 40%'}
+    ];
     vm.isAuthenticated = Authentication.isAuthenticated();
     if (!!vm.isAuthenticated) {
       vm.userInfo = Authentication.getIdentity();

@@ -108,13 +108,45 @@ body {
     }
   }
 
-  .button-wrap{
+  .button-wrap {
     position: absolute;
-    right:30px;
+    right: 30px;
   }
 
   .panel-footer {
     background: transparent !important;
+  }
+}
+
+#ticker {
+
+  $height: 30px;
+  cursor: pointer;
+  height: $height;
+
+  #ticker-wrapper {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+      height: $height;
+      position: relative;
+      transition: all 250ms ease-in;
+
+      li {
+        display: block;
+        height: $height;
+        width: 100%;
+        position: relative;
+
+      }
+    }
   }
 }
 

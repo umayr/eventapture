@@ -2,8 +2,34 @@
   <div id="ticker-wrapper">
     <ul id="ticker-wrapper-inner">
       <li ng-repeat="item in items">
-        <figure><img src="{{item.image}}" alt=""/></figure>
-        <h3>{{item.name}}</h3></li>
+
+        <div class="minor-bottom-spacing-10">
+
+          <div class="col-md-7">
+            <span class="text-muted">
+            {{item.heading}}
+          </span>
+          </div>
+          <div class="col-md-2 no-left-padding">
+            <span class="text-success">
+            {{item.up}}
+          </span>
+          </div>
+          <div class="col-md-2 no-left-padding">
+
+          <span class="text-danger">
+            {{item.down}}
+          </span>
+          </div>
+          <div class="col-md-1 no-left-padding no-right-padding">
+            <a ui-sref="" class="text-primary">
+              Full Story
+            </a>
+          </div>
+
+
+        </div>
+
     </ul>
   </div>
 </div>

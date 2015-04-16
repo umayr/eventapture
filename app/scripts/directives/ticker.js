@@ -9,7 +9,7 @@
 
   function Ticker() {
     return {
-      templateUrl: 'templates/story.html',
+      templateUrl: 'templates/ticker.html',
       restrict: 'E',
       scope: {
         items: '='
@@ -51,7 +51,7 @@
             self.wrapper.style.top = "-" + top + "px";
 
 
-          }, 1000);
+          }, 1800);
         },
         hover: function () {
           var self = this;
