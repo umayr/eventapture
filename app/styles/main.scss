@@ -29,8 +29,10 @@ body {
       min-height: 100%;
       position: absolute;
     }
-    .categories-icon{
-      width: 35px; display: inline-block; text-align: center;
+    .categories-icon {
+      width: 35px;
+      display: inline-block;
+      text-align: center;
     }
     aside {
       article {
@@ -43,23 +45,23 @@ body {
 }
 
 .login-wrapper {
-  .close-btn-wrap{
+  .close-btn-wrap {
     position: relative;
-    top:25px;
+    top: 25px;
     right: 25px;
   }
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 100%;
-  height:100%;
+  height: 100%;
   background: linear-gradient(135deg, $brand-primary 10%, darken($brand-primary, 10%) 90%);
 
   .well {
     background-color: #fff !important;
     border-radius: 0 !important;
     border: none !important;
-    box-shadow: 0 0 50px rgba(0,0,0,0.35);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.35);
 
     &.login-box {
       width: 300px;
@@ -86,6 +88,7 @@ body {
     }
   }
 }
+
 // Directives
 // TODO : Need to move in Separate File.
 
@@ -96,12 +99,21 @@ body {
   .graph-wrap {
     height: 250px;
     overflow: hidden;
-    & > div{
+    .donut {
       margin-top: -30px;
+    }
+    .bar {
+      margin-left: -13px;
+      margin-top: 17px;
     }
   }
 
-  .panel-footer{
+  .button-wrap{
+    position: absolute;
+    right:30px;
+  }
+
+  .panel-footer {
     background: transparent !important;
   }
 }

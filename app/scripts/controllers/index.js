@@ -52,19 +52,19 @@
       return [
         {
           key: "One",
-          y: Math.random()
+          value: Math.random()
         },
         {
           key: "Two",
-          y: Math.random()
+          value: Math.random()
         },
         {
           key: "Three",
-          y: Math.random()
+          value: Math.random()
         },
         {
           key: "Four",
-          y: Math.random()
+          value: Math.random()
         }
       ];
     };

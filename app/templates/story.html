@@ -14,10 +14,20 @@
 
     </div>
 
+    <div class="button-wrap" tooltip="Toggle graph">
+      <a class="btn btn-sm btn-primary" ng-click="toggleGraphType()">
+        <i class="fa fa-pie-chart" ng-if="getGraphType('bar')"></i>
+        <i class="fa fa-bar-chart" ng-if="getGraphType('donut')"></i>
+      </a>
+    </div>
     <div class="graph-wrap">
-      <div>
-        <nvd3 options='options' data='data'></nvd3>
+      <div class="bar" ng-show="getGraphType('bar')">
+        <nvd3 options='options.bar' data='source.bar'></nvd3>
       </div>
+      <div class="donut" ng-show="getGraphType('donut')">
+        <nvd3 options='options.donut' data='source.donut'></nvd3>
+      </div>
+
     </div>
   </div>
   <div class="panel-footer">
