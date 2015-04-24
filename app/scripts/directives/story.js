@@ -15,12 +15,14 @@
       scope: {
         data: '=',
         type: '@',
-        heading: '@'
+        heading: '@',
+        showHeader : '='
       },
       link: link
     };
 
     function link(scope) {
+      
       scope.source = {
         bar: makeDataForBar(scope.data),
         donut: makeDataForDonut(scope.data)

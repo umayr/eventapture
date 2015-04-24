@@ -48,6 +48,15 @@
           }
         }
       })
+      .state('root.story', {
+        url: '/story',
+        views: {
+          'skeleton': {
+            templateUrl: 'partials/story.html',
+            controller: 'Story as vm'
+          }
+        }
+      })
       .state('login', {
         url: '/login',
         templateUrl: 'partials/login.html',
