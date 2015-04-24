@@ -1,7 +1,8 @@
 <div class="panel panel-primary story-directive">
   <div class="panel-heading" ng-if="showHeader">
     <h3 class="panel-title text-center">
-      <span ng-bind="heading"></span>
+      <!-- TODO : Remove the temporary URL fix. -->
+      <a ui-sref="root.story"><span ng-bind="heading"></span></a>
       <div class="pull-right">
         <span class="label label-default">9.3</span>
       </div>
