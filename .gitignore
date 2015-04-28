@@ -1,5 +1,6 @@
-node_modules
-.tmp
-.sass-cache
-bower_components
+*.iml
 .idea/
+.tmp/
+.sass-cache/
+bower_components/
+node_modules/

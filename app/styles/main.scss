@@ -89,11 +89,12 @@ body {
   }
 }
 
-#story{
-  .buttons-wrap{
+#story {
+  .buttons-wrap {
     padding-top: 10px;
   }
 }
+
 // Directives
 // TODO : Need to move in Separate File.
 
@@ -152,6 +153,73 @@ body {
 
       }
     }
+  }
+}
+
+#pages {
+  header {
+    background: #555 url('../images/mock/header.jpg') no-repeat center center;
+    & > .row {
+      padding-top: 250px;
+    }
+    .breaker{
+      background: $black;
+      border-color: $black;
+    }
+    .button-wrap {
+      padding-top: 30px;
+    }
+
+    .backdrop{
+      background: $black;
+      background: rgba(0,0,0,0.75);
+      color: $white;
+      padding: 5px 10px;
+    }
+  }
+}
+.breaker{
+  margin: 5px 0;
+  padding: 0;
+
+}
+#number-crunching-trigger {
+  position: fixed;
+  top: 100px;
+  right: -5px;
+  z-index: 1100;
+
+}
+
+#number-crunching {
+  width: 400px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: $primary;
+  z-index: 1101;
+  border-left: 1px solid darken($primary, 5%);
+  margin-right: -401px;
+  transition: all 0.25s ease-in;
+
+  &.active {
+    margin-right: 0;
+
+  }
+
+  .content {
+    margin-top: 50px;
+    margin-left: 30px;
+    h2 {
+      text-align: center;
+      color: $white;
+      padding-bottom: 30px;
+    }
+    .row {
+      margin-top: 10px;
+    }
+
   }
 }
 
