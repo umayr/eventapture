@@ -46,6 +46,7 @@
     };
 
 
+
     vm.makeData = function () {
       return [
         {
@@ -66,6 +67,7 @@
         }
       ];
     };
+    vm.data = vm.makeData();
     vm.oneAtATime = true;
 
     vm.groups = [
