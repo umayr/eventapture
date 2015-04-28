@@ -7,32 +7,38 @@
   angular.module('evtpr')
     .controller('Root', Root);
 
-  Root.$inject = ['$location', 'Authentication', '$state'];
+  Root.$inject = ['Search', 'Authentication', '$state', '$rootScope'];
 
-  function Root($location, Authentication,$state) {
+  function Root(Search, Authentication, $state, $rootScope) {
     /*jshint validthis: true */
     var vm = this;
+    vm.isSearchBarVisible = true;
+
+
+    $rootScope.$on('$viewContentLoaded', function () {
+      vm.isSearchBarVisible = Search.isVisible();
+    });
 
     vm.categories = [
-      {name :'Sports', icon : 'fa-futbol-o'},
-      {name :'Politics', icon : 'fa-university'},
-      {name :'Travel', icon : 'fa-plane'},
-      {name :'Celebrities', icon : 'fa-music'},
-      {name :'Movies', icon : 'fa-film'},
-      {name :'Religion', icon : 'fa-moon-o'},
-      {name :'Automobile', icon : 'fa-car'},
-      {name :'Gadgets', icon : 'fa-mobile'},
-      {name :'Food', icon : 'fa-cutlery'},
-      {name :'Science', icon : 'fa-flask'},
-      {name :'Misc.', icon : 'fa-asterisk'},
-      {name :'Talent', icon : 'fa-binoculars'}
+      {name: 'Sports', icon: 'fa-futbol-o'},
+      {name: 'Politics', icon: 'fa-university'},
+      {name: 'Travel', icon: 'fa-plane'},
+      {name: 'Celebrities', icon: 'fa-music'},
+      {name: 'Movies', icon: 'fa-film'},
+      {name: 'Religion', icon: 'fa-moon-o'},
+      {name: 'Automobile', icon: 'fa-car'},
+      {name: 'Gadgets', icon: 'fa-mobile'},
+      {name: 'Food', icon: 'fa-cutlery'},
+      {name: 'Science', icon: 'fa-flask'},
+      {name: 'Misc.', icon: 'fa-asterisk'},
+      {name: 'Talent', icon: 'fa-binoculars'}
     ];
 
     vm.trends = [
-      { heading : 'Fusce eget diam at ex varius dictum.', up:'Ex Varius 40%', down: 'Non Vehicula 10%'},
-      { heading : 'Sed nec eros quis nisi tempor tincidunt.', up:'Quis Nisi 30%', down: 'Viverra Turpis 40%'},
-      { heading : 'In varius magna non vehicula auctor.', up:'Viverra Turpis 40%', down: 'Quis Nisi 30%'},
-      { heading : 'In viverra turpis sit amet arcu auctor eleifend.', up:'Non Vehicula 10%', down: 'Ex Varius 40%'}
+      {heading: 'Fusce eget diam at ex varius dictum.', up: 'Ex Varius 40%', down: 'Non Vehicula 10%'},
+      {heading: 'Sed nec eros quis nisi tempor tincidunt.', up: 'Quis Nisi 30%', down: 'Viverra Turpis 40%'},
+      {heading: 'In varius magna non vehicula auctor.', up: 'Viverra Turpis 40%', down: 'Quis Nisi 30%'},
+      {heading: 'In viverra turpis sit amet arcu auctor eleifend.', up: 'Non Vehicula 10%', down: 'Ex Varius 40%'}
     ];
     vm.isAuthenticated = Authentication.isAuthenticated();
     if (!!vm.isAuthenticated) {

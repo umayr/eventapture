@@ -8,13 +8,13 @@
   angular.module('evtpr')
     .controller('Pages', Pages);
 
-  Pages.$inject = ['$location'];
+  Pages.$inject = ['Search'];
 
-  function Pages($location){
+  function Pages(Search){
     /*jshint validthis: true */
     var vm = this;
     vm.hello = 'hello, pages';
-
+    Search.show();
     vm.options = {
       chart: {
         type: 'pieChart',

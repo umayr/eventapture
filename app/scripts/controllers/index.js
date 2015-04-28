@@ -7,9 +7,9 @@
   angular.module('evtpr')
     .controller('Index', Index);
 
-  Index.$inject = ['$location'];
+  Index.$inject = ['Search'];
 
-  function Index($location) {
+  function Index(Search) {
     /*jshint validthis: true */
     var vm = this;
     vm.hello = 'hello, Index';
@@ -47,7 +47,7 @@
       }
     };
 
-
+    Search.show();
     vm.makeData = function () {
       return [
         {
