@@ -7,9 +7,9 @@
   angular.module('evtpr')
     .controller('Story', Story);
 
-  Story.$inject = [];
+  Story.$inject = ['Search'];
 
-  function Story() {
+  function Story(Search) {
     /*jshint validthis: true */
     var vm = this;
     vm.options = {
@@ -44,7 +44,7 @@
         }
       }
     };
-
+Search.show();
 
 
     vm.makeData = function () {

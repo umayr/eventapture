@@ -8,10 +8,12 @@
   angular.module('evtpr')
     .controller('Settings', Settings);
 
-  Settings.$inject = ['$http', '$state'];
+  Settings.$inject = ['$http', '$state', 'Search'];
 
-  function Settings($http,$state) {
+  function Settings($http, $state, Search) {
     /*jshint validthis: true */
+
+    Search.hide();
     var vm = this;
     vm.hello = 'hello, Settings';
     vm.tags = [
