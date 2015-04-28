@@ -322,11 +322,18 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             'images/{,*/}*.webp',
             '{,*/}*.html',
+            '{,*/}*.json',
             'styles/fonts/{,*/}*.*'
           ]
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
           dest: '<%= config.dist %>/.htaccess'
+        },{
+          expand: true,
+          filter: 'isFile',
+          flatten: true,
+          src : 'bower_components/font-awesome/fonts/{,*/}*.*',
+          dest : '<%= config.dist %>/fonts/'
         }]
       },
       styles: {
