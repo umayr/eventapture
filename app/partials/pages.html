@@ -1,1 +1,153 @@
-<h3>Pages</h3>
+<section id="pages">
+
+  <header>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="backdrop">
+          <div class="row">
+            <div class="col-md-8">
+              <h2>Manchester United</h2>
+              <a href="#" target="_blank">Official Website</a>
+            </div>
+            <div class="col-md-4">
+              <div class="pull-right button-wrap">
+                <div class="btn-group" dropdown>
+                  <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+                    Manage <span class="minor-left-padding-10"><span class="caret"></span></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div>
+                <button type="button" class="btn btn-primary">
+                  Edit
+                </button>
+              </div>
+            </div>
+
+          </div>
+          <hr class="breaker"/>
+          <a href="javascript:void(0)" ng-click="vm.showMoreInfo = !vm.showMoreInfo">
+            <span ng-show="!vm.showMoreInfo">More <i class="fa fa-angle-down minor-left-padding-10"></i></span>
+            <span ng-show="vm.showMoreInfo">Less <i class="fa fa-angle-up minor-left-padding-10"></i></span>
+          </a>
+
+          <p ng-show="vm.showMoreInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid consequatur
+            dolorum earum enim illum, in libero modi neque nesciunt, nisi numquam optio rem, tempore temporibus! A
+            aspernatur at atque autem consequatur distinctio doloribus dolorum, illo impedit labore laudantium natus
+            nobis non odio, officia perferendis quasi recusandae repudiandae sapiente voluptatum! Asperiores blanditiis
+            eligendi error et expedita facere fugit illum incidunt ipsum iure magnam molestias nemo neque nesciunt nulla
+            numquam pariatur perferendis provident, quam quidem quos repellat repellendus temporibus vero voluptatem.
+            Aliquid debitis dolorem eius in non quia sapiente, totam. Consequatur culpa doloribus id pariatur quisquam
+            quod, saepe!</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <br class="clearfix"/>
+
+  <div class="row">
+
+    <div class="col-md-12 no-left-padding">
+      <div class="col-md-12 minor-bottom-padding-20">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="javascript:void(0);">Latest</a></li>
+          <li><a href="javascript:void(0);">Popular</a></li>
+          <li><a href="javascript:void(0);">All</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <story heading="Amet consectetur corporis." show-header="true"
+               options="vm.options" data="vm.data[0]">
+        </story>
+      </div>
+      <div class="col-md-4">
+        <story type="live" heading="Lorem ipsum dolor sit amet." show-header="true"
+               options="vm.options" data="vm.data[1]">
+        </story>
+      </div>
+      <div class="col-md-4">
+        <story type="closed" heading="Amet consectetur corporis." show-header="true"
+               options="vm.options" data="vm.data[2]">
+        </story>
+      </div>
+    </div>
+  </div>
+  <div id="number-crunching-trigger">
+    <button class="btn btn-success" ng-click="vm.showSidebar = !vm.showSidebar">
+      <i class="fa fa-angle-left minor-right-padding-10"></i> Show Stats
+    </button>
+  </div>
+  <aside id="number-crunching" ng-class="{'active' : vm.showSidebar}">
+    <div class="close">
+      <button class="btn btn-primary" ng-click="vm.showSidebar = !vm.showSidebar">
+        <i class="fa fa-close"></i>
+      </button>
+    </div>
+    <div class="content">
+      <h2>Statistics <i class="fa fa-bar-chart minor-left-padding-20"></i></h2>
+
+      <div class="row">
+        <div class="col-md-11">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <strong>Population</strong>
+
+              <span class="pull-right">
+                <strong>6 Billion</strong>
+              </span>
+            </div>
+            <div class="panel-body">
+              <table class="table table-striped table-condensed no-bottom-margin">
+                <tr>
+                  <td>Continents</td>
+                  <td><strong>6</strong></td>
+                </tr>
+                <tr>
+                  <td>Countries</td>
+                  <td><strong>198</strong></td>
+                </tr>
+                <tr>
+                  <td>Cities</td>
+                  <td><strong>15,091</strong></td>
+                </tr>
+                <tr>
+                  <td>Towns</td>
+                  <td><strong>1,634,546</strong></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-11">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <strong>Stories</strong>
+
+              <span class="pull-right">
+                <strong>124</strong>
+              </span>
+            </div>
+            <div class="panel-body">
+              <table class="table table-striped table-condensed no-bottom-margin">
+                <tr ng-repeat="category in vm.categories">
+                  <td>{{category.name}}</td>
+                  <td><strong>{{ category.count }}</strong></td>
+                </tr>
+              </table>
+              <input type="button" class="btn btn-xs btn-primary btn-block minor-top-spacing-10" value="Show all"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+</section>
